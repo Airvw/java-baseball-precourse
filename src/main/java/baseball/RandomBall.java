@@ -1,29 +1,28 @@
 package baseball;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static camp.nextstep.edu.missionutils.Randoms.*;
+import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class RandomBall {
 
     private final int startInclusive = 1;
     private final int endInclusive = 9;
     private int[] checkArr = new int[endInclusive + 1];
-    public List<Integer> getRandomNumber() {
-        List<Integer> result = new ArrayList<>();
-        while(result.size() <  3){
+
+    public String getRandomNumber() {
+        String result = "";
+        while(result.length() <  3){
             int randomNum = pickNumberInRange(startInclusive, endInclusive);
-            result = isNotSame(result, randomNum);
+            result += isNotSame(randomNum);
         }
 
         return result;
     }
 
-    private List<Integer> isNotSame(List<Integer> result, int randomNum) {
+    private String isNotSame(int randomNum) {
+        StringBuilder sb = new StringBuilder();
         if(checkArr[randomNum]++ == 0){
-            result.add(randomNum);
+            sb.append(randomNum);
         }
-        return result;
+        return sb.toString();
     }
 }

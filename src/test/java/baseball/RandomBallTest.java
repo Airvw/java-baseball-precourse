@@ -29,6 +29,6 @@ public class RandomBallTest {
     @Test
     @DisplayName("랜덤 3자리 수 테스트")
     void getRandomNumberTest(){
-        assertThat(randomBall.getRandomNumber().size()).isEqualTo(3);
+        assertThat(randomBall.getRandomNumber().length()).isEqualTo(3);
     }
 }
