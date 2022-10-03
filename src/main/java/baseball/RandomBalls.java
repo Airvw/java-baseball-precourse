@@ -2,7 +2,7 @@ package baseball;
 
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
-public class RandomBall {
+public class RandomBalls {
 
     private final int startInclusive = 1;
     private final int endInclusive = 9;
@@ -10,7 +10,7 @@ public class RandomBall {
 
     public String getRandomNumber() {
         String result = "";
-        while(result.length() <  3){
+        while (result.length() < 3) {
             int randomNum = pickNumberInRange(startInclusive, endInclusive);
             result += isNotSame(randomNum);
         }
@@ -20,7 +20,7 @@ public class RandomBall {
 
     private String isNotSame(int randomNum) {
         StringBuilder sb = new StringBuilder();
-        if(checkArr[randomNum]++ == 0){
+        if (checkArr[randomNum]++ == 0) {
             sb.append(randomNum);
         }
         return sb.toString();
