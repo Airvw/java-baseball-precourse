@@ -7,15 +7,17 @@ import org.junit.jupiter.api.Test;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RandomBallTest {
+public class RandomBallsTest {
 
     private final int startInclusive = 1;
     private final int endInclusive = 9;
-    private RandomBall randomBall;
+    private RandomBalls randomBalls;
+    private Balls balls;
 
     @BeforeEach
     void setUp(){
-        randomBall = new RandomBall();
+        randomBalls = new RandomBalls();
+        balls = new Balls();
     }
 
     @Test
@@ -29,6 +31,13 @@ public class RandomBallTest {
     @Test
     @DisplayName("랜덤 3자리 수 테스트")
     void getRandomNumberTest(){
-        assertThat(randomBall.getRandomNumber().length()).isEqualTo(3);
+        assertThat(randomBalls.getRandomNumber().length()).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("랜덤 Balls 테스트")
+    void getRandomBalls(){
+        String randomNum = randomBalls.getRandomNumber();
+        assertThat(balls.makeBalls(randomNum).size()).isEqualTo(3);
     }
 }
