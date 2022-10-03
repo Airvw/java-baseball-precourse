@@ -4,11 +4,10 @@ public class Ball {
     private int number;
     private int position;
 
-    public Ball(int number, int postion) {
+    public Ball(int number, int position) {
         this.number = number;
-        this.position = postion;
+        this.position = position;
     }
-
 
     public BallStatus getBallStatus(Ball randomBall) {
         if(number == randomBall.number && position == randomBall.position) return BallStatus.STRIKE;
